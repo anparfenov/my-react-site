@@ -9,39 +9,39 @@
         update: yes
 
     - name: Copy images directory to server
-      local_action: ansible.builtin.command rsync -a ../public/images {{ ansible_user }}@{{ inventory_hostname }}:{{ ansible_env.HOME }}/my-react-site/public/
+      local_action: ansible.builtin.command rsync -a ../public/images {{ ansible_user }}@{{ inventory_hostname }}:{{ ansible_env.HOME }}/my-react-site/packages/site/public
 
     - name: Install nvm
-      shell: >
+      ansible.builtin.shell: >
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
       args:
         creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
         executable: /bin/bash
 
     - name: Install Node.js
-      shell: '. {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install --lts'
+      ansible.builtin.shell: '. {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install --lts'
       args:
         creates: "{{ ansible_env.HOME }}/.nvm/versions/node"
         executable: /bin/bash
 
     - name: Install pm2
-      shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm i pm2 -g"
+      ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm i pm2 -g"
       args:
         executable: /bin/bash
 
     - name: Install npm packages
-      shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm ci"
+      ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm ci"
       args:
         chdir: "{{ansible_env.HOME}}/my-react-site/"
         executable: /bin/bash
 
     - name: Run build
-      shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm run build"
+      ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npx nx build site"
       args:
         chdir: "{{ansible_env.HOME}}/my-react-site/"
         executable: /bin/bash
 
     - name: Run start with pm2
-      shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && pm2 start ecosystem.config.js"
+      ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && pm2 start ecosystem.config.js"
       args:
         executable: /bin/bash
