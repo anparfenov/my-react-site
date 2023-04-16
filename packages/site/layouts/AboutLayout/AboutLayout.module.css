@@ -6,13 +6,10 @@
 
 .AboutLayoutLinks {
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .AboutLayoutLinkList {
     display: flex;
-    flex-flow: column nowrap;
     gap: 4px;
 }
 

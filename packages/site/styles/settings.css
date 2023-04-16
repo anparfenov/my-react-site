@@ -52,29 +52,6 @@
 }
 
 .s-light-theme {
-    --color-main:           hsl(0, 0%, 97%);
-    --color-main-50:        hsl(79, 1%, 98%, 0.5);
-    --color-scnd:           hsl(0, 0%, 82%);
-    --color-accent:         hsl(135, 98%, 71%);
-    --color-accent-85:      hsl(136, 64%, 47%, 0.85);
-    --color-extra:          hsl(209,100%,31%);
-    --color-extra-85:       hsl(209,100%,31%, 0.85);
-    --color-super-extra:    hsl(267,80%,31%, 1);
-    --color-border:         hsl(0, 0%, 62%);
-    --color-text:           hsl(0,0%,0%);
-    --color-text-50:        hsl(0, 0%, 0%, 0.5);
-    --color-text-inv:       hsl(100, 100%, 97%);
-    --color-error:          hsl(346,84%,61%);
-    --color-terminal-black: hsl(0, 0%, 18%);
-    --color-terminal-green: hsl(137, 93%, 53%);
-
-    --color-shadow-link: var(--color-extra);
-    --color-back-link-text: var(--color-text);
-    --color-back-link-background: var(--color-text);
-    --color-back-link-hover: var(--color-text-inv);
-}
-
-.s-light-theme-v2 {
     --color-main:           white;
     --color-main-50:        hsl(0, 0%, 100%, 0.5);
     --color-secondary:      hsl(36deg, 100%, 89%);
@@ -89,6 +66,11 @@
     --color-tertiary:       hsla(147deg, 100%, 79%);
     --color-tertiary-42:    hsla(147deg, 100%, 79%, 42%);
     --color-image-back:     hsla(0, 0%, 90%, 1);
+
+    --color-yellow-bg: hsla(59, 100%, 89%, 1);
+    --color-pink-bg: hsla(318, 100%, 89%, 1);
+    --color-green-bg: hsla(142, 100%, 89%, 1);
+    --color-blue-bg: hsla(197, 100%, 89%, 1);
 
     --color-shadow-link: var(--color-extra);
     --color-back-link-text: var(--color-text);

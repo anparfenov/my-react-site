@@ -32,7 +32,8 @@ export const AboutLayout: FC<FooterProps> = ({ children }) => {
 					className={clsx(
 						'about-text',
 						style.AboutLayoutText,
-						style.AboutLayoutBox
+						style.AboutLayoutBox,
+						style.AboutLayoutBoxBorder,
 					)}
 				>
 					{children}
@@ -40,7 +41,7 @@ export const AboutLayout: FC<FooterProps> = ({ children }) => {
 				<div
 					className={clsx(
 						style.AboutLayoutLinks,
-						style.AboutLayoutBox
+						style.AboutLayoutBox,
 					)}
 				>
 					<ul className={clsx(style.AboutLayoutLinkList)}>
@@ -57,7 +58,7 @@ export const AboutLayout: FC<FooterProps> = ({ children }) => {
 				<div
 					className={clsx(
 						style.AboutLayoutDevices,
-						style.AboutLayoutBox
+						style.AboutLayoutBox,
 					)}
 				>
 					<ul className={style.AboutLayoutDeviceList}>

@@ -23,7 +23,7 @@ export const ThemeLayout: FC<ThemeLayoutProps> = ({ children }) => {
 		<div
 			className={clsx(
 				's-common',
-				's-light-theme-v2',
+				's-light-theme',
 				'default-layout',
 				jetBrainsMonoFont.variable,
 				overpassFont.variable

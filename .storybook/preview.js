@@ -14,6 +14,6 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <div class="s-common s-light-theme-v2" style={{padding: '10px'}}><Story /></div>
+    <div class="s-common s-light-theme" style={{padding: '10px'}}><Story /></div>
   )
 ]

@@ -21,7 +21,7 @@ export const AboutGrid: FC<AboutGridProps> = ({children}) => {
                         className = clsx(className, style.AboutGridLinks);
                     }
                     if (i === 2) {
-                        className = clsx(className, style.AboutGridMachine);
+                        className = clsx(className, style.AboutGridDevices);
                     }
                     if (i === 3) {
                         className = clsx(className, style.AboutGridPhoto);

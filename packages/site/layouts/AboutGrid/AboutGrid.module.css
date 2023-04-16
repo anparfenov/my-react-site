@@ -3,13 +3,16 @@
     display: grid;
     margin-top: var(--content-margin-top);
     gap: 10px;
+    grid-template-columns: max-content;
     grid-template-areas: 
-        "text links"
-        "devices .";
+        "text"
+        "links"
+        "devices";
 }
 
 .AboutGridText {
     grid-area: text;
+    background-color: var(--color-green-bg);
 }
 
 .AboutGridPhoto {
@@ -18,8 +21,10 @@
 
 .AboutGridLinks {
     grid-area: links;
+    background-color: var(--color-yellow-bg);
 }
 
 .AboutGridDevices {
     grid-area: devices;
+    background-color: var(--color-pink-bg);
 }
