@@ -9,7 +9,7 @@
         update: yes
 
     - name: Copy images directory to server
-      local_action: ansible.builtin.command rsync -a ../public/images {{ ansible_user }}@{{ inventory_hostname }}:{{ ansible_env.HOME }}/my-react-site/packages/site/public
+      local_action: ansible.builtin.command rsync -a ../packages/site/public/images {{ ansible_user }}@{{ inventory_hostname }}:{{ ansible_env.HOME }}/my-react-site/packages/site/public
 
     - name: Install nvm
       ansible.builtin.shell: >
@@ -29,6 +29,11 @@
       args:
         executable: /bin/bash
 
+    - name: Install nx
+      ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm i nx -g"
+      args:
+        executable: /bin/bash
+
     - name: Install npm packages
       ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm ci"
       args:
@@ -36,7 +41,13 @@
         executable: /bin/bash
 
     - name: Run build
-      ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npx nx build site"
+      ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && nx build site"
+      args:
+        chdir: "{{ansible_env.HOME}}/my-react-site/"
+        executable: /bin/bash
+
+    - name: Make start script runnable
+      ansible.builtin.shell: "chmod +x start.sh"
       args:
         chdir: "{{ansible_env.HOME}}/my-react-site/"
         executable: /bin/bash
