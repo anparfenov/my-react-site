@@ -3,11 +3,17 @@
     display: grid;
     margin-top: var(--content-margin-top);
     gap: 10px;
-    grid-template-columns: max-content;
+    grid-template-columns: 100%;
     grid-template-areas: 
         "text"
         "links"
         "devices";
+}
+
+@media --tablet-width {
+    .AboutGrid {
+        grid-template-columns: max-content;
+    }
 }
 
 .AboutGridText {

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate_cv": "ts-node --project ./scripts/resume-generator/tsconfig.json ./scripts/resume-generator/src/generator.ts",
+    "generate_cv": "tsc --project ./tsconfig.resume-generator.json && node -r tsconfig-paths/register ./scripts/dist/scripts/resume-generator/generator.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -45,6 +45,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-storybook": "^0.6.8",
     "npm-run-all": "^4.1.5",
-    "ts-node": "^10.9.1"
+    "resolve-tspaths": "^0.8.13",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0"
   }
 }

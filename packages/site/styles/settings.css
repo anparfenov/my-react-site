@@ -77,3 +77,5 @@
     --color-back-link-background: var(--color-text);
     --color-back-link-hover: var(--color-text-inv);
 }
+
+@custom-media --tablet-width (min-width: 768px);

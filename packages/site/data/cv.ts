@@ -207,10 +207,10 @@ export const cvData: CV = {
     educationList: [
         {
             universityLang: 'cv.university',
-            class: 'sut',
+            class: 'c-education--sut',
             image: '',
             start: new Date('2014-09-01'),
-            end: new Date('2014-06-29'),
+            end: new Date('2018-06-29'),
             facultyLang: 'cv.faculty',
             programLang: 'cv.program',
         },

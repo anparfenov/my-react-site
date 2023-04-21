@@ -1,12 +1,12 @@
 import rosetta from 'rosetta';
-import { aboutI18N } from 'data/about';
-import { adminI18N } from 'data/admin';
-import { cvI18N } from 'data/cv';
-import { footerI18N } from 'data/footer';
-import { homeI18N } from 'data/home';
-import { navI18N } from 'data/nav';
-import { projectsI18N } from 'data/projects';
-import { articlesI18N } from 'features/articles';
+import { aboutI18N } from '@data/about';
+import { adminI18N } from '@data/admin';
+import { cvI18N } from '@data/cv';
+import { footerI18N } from '@data/footer';
+import { homeI18N } from '@data/home';
+import { navI18N } from '@data/nav';
+import { projectsI18N } from '@data/projects';
+import { articlesI18N } from '@features/articles';
  
 export const i18n = rosetta({
     ru: {

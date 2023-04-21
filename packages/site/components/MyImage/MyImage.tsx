@@ -1,15 +1,8 @@
 import Image from 'next/image';
 import React, { FC } from 'react';
+import type { MyImageType } from "@features/image";
 
 import style from './MyImage.module.css';
-
-export type MyImageType = {
-	src?: string;
-	alt?: string;
-	width?: number;
-	height?: number;
-	isNextImage?: boolean;
-};
 
 type MyImageProps = MyImageType;
 

@@ -1,11 +1,15 @@
-import {Contact, CV, cvData, Education, Job, Skill} from "../../../data/cv";
-import {i18n} from "../../../i18n/i18n";
-import {UserLink} from "../../../data/about";
+// TODO: rewrite to js
+// use json files for data
+
+import {Contact, CV, cvData, Education, Job, Skill} from "@data/cv";
+import {i18n} from "@i18n/i18n";
+import {UserLink} from "@data/about";
 import {format as dateFormat} from 'date-fns';
 import * as fs from "fs";
 import * as path from "path";
 import { spawn } from "child_process";
 
+// TODO: add envs
 const CV_DIRNAME = path.resolve(process.env.HOME ?? '', 'Documents/tex/generated_cv');
 const CV_RU_FILENAME = 'cv_ru_andrey_parfenov_gen';
 const CV_RU_FILENAME_LATEX = 'cv_ru_andrey_parfenov_gen.dvi';

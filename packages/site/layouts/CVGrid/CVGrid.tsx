@@ -13,6 +13,8 @@ export const CVGrid: FC<CVGridProps> = ({children}) => {
             {Children.map(children, (child, i) => {
                 if (isValidElement(child)) {
                     let className = child.props.className;
+                    // NOTE: implicit class assignment. Hard to read
+                    // maybe i can make it better
                     if (i === 0) {
                         className = clsx(className, style.CVGridHeader);
                     }

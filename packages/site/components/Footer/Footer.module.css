@@ -2,10 +2,18 @@
     max-width: var(--max-footer-width);
     width: 100%;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: space-between;
     margin: 0 auto;
     padding: 16px 0;
     flex-shrink: 0;
+    gap: 10px;
+}
+
+@media --tablet-width {
+    .FooterSourcesText {
+        display: inline;
+    }
 }
 
 .FooterTech {

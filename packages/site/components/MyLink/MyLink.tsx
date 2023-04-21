@@ -28,6 +28,7 @@ export const MyLink: FC<MyLinkProps> = ({
 	href,
 	theme,
 	children,
+	className,
 	isActive = false,
 }) => {
 	return (
@@ -39,6 +40,7 @@ export const MyLink: FC<MyLinkProps> = ({
 				[style.MyLinkSimple]: theme === LinkTheme.SIMPLE,
 				[style.MyLinkIcon]: theme === LinkTheme.ICON,
 				[style.MyLinkPrimary]: theme === LinkTheme.PRIMARY,
+				className
 			})}
 		>
 			{children}

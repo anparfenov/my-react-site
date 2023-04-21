@@ -17,7 +17,6 @@ export const AboutGrid: FC<AboutGridProps> = ({children}) => {
                         className = clsx(className, style.AboutGridText);
                     }
                     if (i === 1) {
-                        console.log('ehllo')
                         className = clsx(className, style.AboutGridLinks);
                     }
                     if (i === 2) {
