@@ -1,58 +1,53 @@
 ---
-- hosts: all
-  tasks:
-    - name: Clone or update a my-react-site github repository
-      git:
-        repo: git@github.com:moody-person/my-react-site.git
-        dest: "{{ansible_env.HOME}}/my-react-site/"
-        clone: yes
-        update: yes
+-   hosts: all
+    tasks:
+        -   name: Clone or update a my-react-site github repository
+            git:
+                repo: git@github.com:moody-person/my-react-site.git
+                dest: "{{ansible_env.HOME}}/my-react-site/"
+                clone: yes
+                update: yes
+                force: true
 
-    - name: Copy images directory to server
-      local_action: ansible.builtin.command rsync -a ../packages/site/public/images {{ ansible_user }}@{{ inventory_hostname }}:{{ ansible_env.HOME }}/my-react-site/packages/site/public
+        -   name: Copy images directory to server
+            local_action: ansible.builtin.command rsync -a ../packages/site/public/images {{ ansible_user }}@{{ inventory_hostname }}:{{ ansible_env.HOME }}/my-react-site/packages/site/public
 
-    - name: Install nvm
-      ansible.builtin.shell: >
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-      args:
-        creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
-        executable: /bin/bash
+        -   name: Install nvm
+            ansible.builtin.shell: >
+                curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+            args:
+                creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+                executable: /bin/bash
 
-    - name: Install Node.js
-      ansible.builtin.shell: '. {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install --lts'
-      args:
-        creates: "{{ ansible_env.HOME }}/.nvm/versions/node"
-        executable: /bin/bash
+        -   name: Install Node.js
+            ansible.builtin.shell: '. {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install --lts'
+            args:
+                creates: "{{ ansible_env.HOME }}/.nvm/versions/node"
+                executable: /bin/bash
 
-    - name: Install pm2
-      ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm i pm2 -g"
-      args:
-        executable: /bin/bash
+        -   name: Install pm2
+            ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm i pm2 -g"
+            args:
+                executable: /bin/bash
 
-    - name: Install nx
-      ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm i nx -g"
-      args:
-        executable: /bin/bash
+        -   name: Install nx
+            ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm i nx -g"
+            args:
+                executable: /bin/bash
 
-    - name: Install npm packages
-      ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm ci"
-      args:
-        chdir: "{{ansible_env.HOME}}/my-react-site/"
-        executable: /bin/bash
+        -   name: Install npm packages
+            ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && npm ci"
+            args:
+                chdir: "{{ansible_env.HOME}}/my-react-site/"
+                executable: /bin/bash
 
-    - name: Run build
-      ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && nx build site"
-      args:
-        chdir: "{{ansible_env.HOME}}/my-react-site/"
-        executable: /bin/bash
+        -   name: Run build
+            ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && nx build site"
+            args:
+                chdir: "{{ansible_env.HOME}}/my-react-site/"
+                executable: /bin/bash
 
-    - name: Make start script runnable
-      ansible.builtin.shell: "chmod +x start.sh"
-      args:
-        chdir: "{{ansible_env.HOME}}/my-react-site/"
-        executable: /bin/bash
-
-    - name: Run start with pm2
-      ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && pm2 start ecosystem.config.js"
-      args:
-        executable: /bin/bash
+        -   name: Run start with pm2
+            ansible.builtin.shell: ". {{ ansible_env.HOME }}/.nvm/nvm.sh && pm2 start ecosystem.config.js"
+            args:
+                executable: /bin/bash
