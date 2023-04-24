@@ -3,7 +3,7 @@
     padding-left: 16px;
 }
 
-@media --tablet-width {
+@media (--tablet-width) {
     .CVList {
         padding-left: 32px;
     }

@@ -1,6 +1,9 @@
 module.exports = {
-    plugins: {
-      'autoprefixer': {},
-      'postcss-custom-media': {},
-    },
-  }
+	plugins: {
+		'@csstools/postcss-global-data': {
+			files: ['./styles/custom-media.css']
+		},
+		'autoprefixer': {},
+		'postcss-custom-media': {},
+	},
+}

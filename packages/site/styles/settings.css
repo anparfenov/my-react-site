@@ -18,8 +18,8 @@
 
     --padding-main: 8px;
 
-    --sans-serif: var(--font-overpass), Overpass, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
-    --monospace: var(--font-jetbrainsmono), 'JetBrains Mono', 'Roboto Mono', monospace;
+    --sans-serif: Overpass, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
+    --monospace: 'JetBrains Mono', 'Roboto Mono', monospace;
     --serif: Georgia, 'Times New Roman', Times, serif;
 
     --color-gray-100: hsl(0, 0%, 90%);
@@ -47,7 +47,7 @@
         --text-base: 1rem;
         --text-lg: 1.25rem;
         --text-xl: 1.5rem;
-        --text-xxl: 2rem;    
+        --text-xxl: 2rem;
     }
 }
 
@@ -78,4 +78,3 @@
     --color-back-link-hover: var(--color-text-inv);
 }
 
-@custom-media --tablet-width (min-width: 768px);

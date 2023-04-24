@@ -4,13 +4,13 @@
     margin-top: var(--content-margin-top);
     gap: 10px;
     grid-template-columns: 100%;
-    grid-template-areas: 
+    grid-template-areas:
         "text"
         "links"
         "devices";
 }
 
-@media --tablet-width {
+@media (--tablet-width) {
     .AboutGrid {
         grid-template-columns: max-content;
     }

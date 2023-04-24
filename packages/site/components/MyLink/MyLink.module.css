@@ -74,9 +74,8 @@
 .MyLinkPrimary {
     color: var(--color-back-link-text);
     position:relative;
-    background: linear-gradient(0deg, var(--color-back-link-background) 50%,transparent 0);
-    background-position: 0 0;
-    background-size: 100% 200%;
+	background: linear-gradient(0deg, var(--color-back-link-background) 50%, transparent 0) 0 0;
+	background-size: 100% 200%;
     font-family: var(--monospace);
     transition: color .16s linear,background .26s ease,transform .26s ease;
     text-transform: uppercase;
@@ -86,6 +85,11 @@
 
 .MyLinkPrimary:visited {
     color: var(--color-back-link-text);
+}
+
+.MyLinkPrimary.MyLinkActive {
+	background-position: 0 100%;
+	color: var(--color-back-link-hover);
 }
 
 .MyLinkPrimary:hover {

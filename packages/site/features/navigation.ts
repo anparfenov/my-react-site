@@ -37,11 +37,8 @@ const routes = [
 
 function updateIsCurrent(routes: Nav[], currentPath: string) {
     return routes.map((route) => {
-        if (route.url === currentPath) {
-            route.isCurrent = true;
-        } else {
-            route.isCurrent = false;
-        }
+		console.log('router url', route.url);
+        route.isCurrent = route.url === currentPath;
         return route;
     })
 }

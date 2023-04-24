@@ -1,0 +1,3 @@
+/* import this file in every css.module file if needed */
+
+@custom-media --tablet-width (min-width: 768px);

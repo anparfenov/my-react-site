@@ -5,6 +5,7 @@
 	"scripts": {},
 	"private": true,
 	"dependencies": {
+		"@csstools/postcss-global-data": "^1.0.3",
 		"@linaria/babel-preset": "^4.3.2"
 	},
 	"devDependencies": {
