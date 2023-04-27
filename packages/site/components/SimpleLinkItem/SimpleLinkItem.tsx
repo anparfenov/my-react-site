@@ -5,9 +5,9 @@ import {
 	IconBrandVk,
 } from '@tabler/icons';
 import React, { FC, ReactNode } from 'react';
-import { UserLink } from 'data/about';
-import { i18n } from 'i18n/i18n';
-import { LinkTheme, MyLink } from 'components/MyLink/MyLink';
+import { UserLink } from '@data/about';
+import { i18n } from '@i18n/i18n';
+import { LinkTheme, MyLink } from '@components/MyLink/MyLink';
 
 type SimpleLinkItemProps = { link: UserLink };
 

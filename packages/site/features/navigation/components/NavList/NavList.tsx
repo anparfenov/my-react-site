@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
-import { Nav } from 'features/navigation';
-import { NavItem } from 'components/NavItem/NavItem';
+import { Nav } from '@features/navigation/navigation';
+import { NavItem } from '@features/navigation/components/NavItem/NavItem';
 
 import style from './NavList.module.css';
 

@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import Head from 'next/head';
 import React, { FC, ReactNode } from 'react';
-import { MyDevice } from 'components/MyDevice/MyDevice';
-import { SimpleLinkItem } from 'components/SimpleLinkItem/SimpleLinkItem';
+import { MyDevice } from '@features/aboutme/components/MyDevice/MyDevice';
+import { SimpleLinkItem } from '@components/SimpleLinkItem/SimpleLinkItem';
 import { TextWithBack } from 'components/TextWithBack/TextWithBack';
 import { aboutData } from 'data/about';
 import { i18n } from 'i18n/i18n';

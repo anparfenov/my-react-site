@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import React, { FC } from 'react';
-import type { MyImageType } from "@features/image";
+import type { MyImageType } from "@features/image/image";
 
 import style from './MyImage.module.css';
 
 type MyImageProps = MyImageType;
 
-// TODO: fix gray `fields`
 export const MyImage: FC<MyImageProps> = ({
 	src,
 	alt,

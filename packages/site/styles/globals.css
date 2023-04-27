@@ -19,7 +19,7 @@ body {
     flex-direction: column;
     font-family: var(--sans-serif);
     color: var(--color-text);
-    background-color: var(--color-main);  
+    background-color: var(--color-main);
     height: 100%;
 }
 
@@ -81,10 +81,6 @@ a {
     cursor: pointer;
 }
 
-img {
-  aspect-ratio: auto attr(width) / attr(height);
-}
-
 pre,
 code {
   font-family: var(--monospace);
@@ -98,12 +94,7 @@ pre {
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
   tab-size: 2;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
   hyphens: none;
   padding: 1em;
   margin: .5em 0;

@@ -1,7 +1,7 @@
 import { IconBrandGithub } from '@tabler/icons';
 import React, { FC } from 'react';
 import { i18n } from 'i18n/i18n';
-import { LinkTheme, MyLink } from 'components/MyLink/MyLink';
+import { LinkTheme, MyLink } from '@components/MyLink/MyLink';
 
 import style from './Footer.module.css';
 

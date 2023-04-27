@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react';
-import { useMyRouter } from 'features/navigation';
+import { useMyRouter } from '@features/navigation/navigation';
 import { i18n } from 'i18n/i18n';
-import { LinkTheme, MyLink } from 'components/MyLink/MyLink';
+import { LinkTheme, MyLink } from '@components/MyLink/MyLink';
 
 import style from './Header.module.css';
 

@@ -107,7 +107,7 @@ ${tech?.map((item) => item.name).join(', ')}
     const generateItemList = ({sectionLang, list}: Skill) => {
         return `
 \\subsection{${i18n.t(sectionLang)}}
-        
+
 \\begin{itemize}
     \\item ${list?.join(', ')}
 \\end{itemize}`
@@ -127,7 +127,7 @@ function generateEducation(educationList: Education[]): string {
 
     return `\\section{${i18n.t('cv.education')}}
 
-${educationList.map((education) => 
+${educationList.map((education) =>
         String.raw`\subsection{${i18n.t(education.universityLang)}}
 
 2014--2018\newline
@@ -142,7 +142,7 @@ function generateJobs(jobs: Job[]): string {
 ${dateFormat(job.start, "MMMM/yyyy")} - ${job.end ? dateFormat(job.start, "MMMM/yyyy") : i18n.t('cv.currentTime')}
 
 \\begin{itemize}
-${job.description.map(({textLang}) => 
+${job.description.map(({textLang}) =>
     `${generateTab(4)}\\item ${i18n.t(textLang)}`
 ).join('\n')}
 \\end{itemize}

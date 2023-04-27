@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { FC } from 'react';
 import { format } from 'date-fns';
 import style from './CVDate.module.css';
-import { i18n } from 'i18n/i18n';
+import { i18n } from '@i18n/i18n';
 
 type CVDateProps = {
 	start: Date,

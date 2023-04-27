@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { TMyDevice } from 'data/about';
-import { i18n } from 'i18n/i18n';
+import { TMyDevice } from '@data/about';
+import { i18n } from '@i18n/i18n';
 
 import style from './MyDevice.module.css';
 

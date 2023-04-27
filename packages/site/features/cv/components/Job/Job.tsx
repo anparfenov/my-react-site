@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { Job } from 'data/cv';
-import { i18n } from 'i18n/i18n';
-import { CVDate } from 'components/CVDate/CVDate';
+import { Job } from '@data/cv';
+import { i18n } from '@i18n/i18n';
+import { CVDate } from '@features/cv/components/CVDate/CVDate';
 
 import style from './Job.module.css';
 

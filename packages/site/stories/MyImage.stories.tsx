@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { MyImage } from '../components/MyImage/MyImage';
+import { MyImage } from '@features/image/components/MyImage/MyImage';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

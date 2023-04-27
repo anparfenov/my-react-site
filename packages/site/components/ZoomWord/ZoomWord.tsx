@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react';
-import { Nav } from 'features/navigation';
+import { Nav } from '@features/navigation/navigation';
 import { i18n } from 'i18n/i18n';
 import { range } from 'utils/utils';
 import style from './ZoomWord.module.css';

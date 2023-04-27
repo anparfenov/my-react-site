@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { UserLink } from 'data/about';
-import { useMyRouter } from 'features/navigation';
+import { useMyRouter } from '@features/navigation/navigation';
 import { i18n } from 'i18n/i18n';
-import { MyLink, LinkTheme } from 'components/MyLink/MyLink';
-import { SimpleLinkItem } from 'components/SimpleLinkItem/SimpleLinkItem';
+import { MyLink, LinkTheme } from '@components/MyLink/MyLink';
+import { SimpleLinkItem } from '@components/SimpleLinkItem/SimpleLinkItem';
 import { TextWithBack } from 'components/TextWithBack/TextWithBack';
 import style from './Hero.module.css';
 

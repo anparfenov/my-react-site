@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { RepoStructure } from 'features/projects.types';
-import { Project } from 'components/Project/Project';
+import { RepoStructure } from '@features/projects/projects.types';
+import { Project } from '@features/projects/components/Project/Project';
 
 import style from './ProjectsList.module.css';
 

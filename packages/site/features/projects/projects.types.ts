@@ -1,4 +1,4 @@
-import type { MyImageType } from "@features/image";
+import type { MyImageType } from "@features/image/image";
 
 export type Project = {
     name: string;

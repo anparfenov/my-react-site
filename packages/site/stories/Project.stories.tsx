@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Project } from '../components/Project/Project';
-import { RepoName } from '../features/projects.types';
+import { Project } from '@features/projects/components/Project/Project';
+import { RepoName } from '@features/projects/projects.types';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

@@ -6,10 +6,10 @@ import {
 	isSkillList,
 	Job,
 	Skill,
-} from 'data/cv';
-import { EducationComponent } from 'components/Education/Education';
-import { JobComponent } from 'components/Job/Job';
-import { SkillComponent } from 'components/Skill/Skill';
+} from '@data/cv';
+import { EducationComponent } from '@features/cv/components/Education/Education';
+import { JobComponent } from '@features/cv/components/Job/Job';
+import { SkillComponent } from '@features/cv/components/Skill/Skill';
 
 import style from './CVList.module.css';
 

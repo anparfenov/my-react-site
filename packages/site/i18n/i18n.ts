@@ -6,8 +6,8 @@ import { footerI18N } from '@data/footer';
 import { homeI18N } from '@data/home';
 import { navI18N } from '@data/nav';
 import { projectsI18N } from '@data/projects';
-import { articlesI18N } from '@features/articles';
- 
+import { articlesI18N } from '@features/articles/articles';
+
 export const i18n = rosetta({
     ru: {
         admin: {
@@ -36,5 +36,5 @@ export const i18n = rosetta({
         }
     }
 });
- 
+
 i18n.locale('ru');

@@ -1,4 +1,4 @@
-import { Project } from "features/projects.types";
+import { Project } from "@features/projects/projects.types";
 
 export const projectsI18N = {
     ru: {
@@ -17,7 +17,7 @@ export const projectsList: Project[] = [
         link: 'https://asleeppiano.gitlab.io/origin-hugo-site',
         image: {
             src: '/images/projects/origin-hugo-theme.png',
-            width: 300, // TODO: change width
+            width: 300,
             height: 300,
             alt: 'origin hugo',
         },

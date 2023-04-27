@@ -6,7 +6,12 @@
 	"private": true,
 	"dependencies": {
 		"@csstools/postcss-global-data": "^1.0.3",
-		"@linaria/babel-preset": "^4.3.2"
+		"@linaria/babel-preset": "^4.3.2",
+		"@next/font": "^13.3.1",
+		"eslint-config-next": "^13.3.1",
+		"next": "^13.3.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
 		"nx": "15.4.4",

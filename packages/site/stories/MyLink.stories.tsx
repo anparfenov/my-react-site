@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { MyLink, LinkTheme } from '../components/MyLink/MyLink';
+import { MyLink, LinkTheme } from '@components/MyLink/MyLink';
 import { IconBrandAmongus } from '@tabler/icons';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

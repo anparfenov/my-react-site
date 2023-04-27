@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Nav } from 'features/navigation';
+import { Nav } from '@features/navigation/navigation';
 import { i18n } from 'i18n/i18n';
 import { ZoomWord } from 'components/ZoomWord/ZoomWord';
 import style from './HeroNavItem.module.css';

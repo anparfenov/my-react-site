@@ -1,4 +1,4 @@
-import { i18n } from '@i18ni18n';
+import { i18n } from '@i18n/i18n';
 import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {

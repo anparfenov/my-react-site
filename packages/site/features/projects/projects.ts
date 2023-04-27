@@ -2,8 +2,8 @@
 import { HttpRequestBuilder, isOk } from '@asleeppiano/http-client';
 import fs from 'fs';
 import path from 'path';
-import { projectsList } from 'data/projects';
-import { githubApiClient, GITHUB_API_URL } from './api';
+import { projectsList } from '@data/projects';
+import { githubApiClient, GITHUB_API_URL } from '../api';
 import { GithubProject, GithubRepo, Project, RepoName, RepoStructure, Tech } from './projects.types';
 
 function isGithubRepoAndProject(
@@ -101,7 +101,6 @@ export async function fetchGithubProjects(): Promise<Array<RepoStructure>> {
         const langs = languages.map((l) => (isOk(l) ? l.result.data : []));
         const res = filteredRepos.map((repo, i) => ({
             ...repo,
-            // FIXME: fix type inference
             languages: langs[i],
         }));
         return adaptToRepoStructure(res);
@@ -157,7 +156,7 @@ export async function getProjectsData(): Promise<
                 endDate: parseDuration('1w'),
             };
             fs.writeFileSync(cacheDest, JSON.stringify(cachedProject));
-            return githubProjects;    
+            return githubProjects;
         }
         return null;
     } catch (e) {

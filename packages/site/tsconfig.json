@@ -16,13 +16,13 @@
 		"incremental": true,
 		"baseUrl": ".",
 		"paths": {
-			"@components*": ["components/*"],
-			"@i18n*": ["i18n/*"],
-			"@data*": ["data/*"],
-			"@features*": ["features/*"],
-			"@pages*": ["pages/*"],
-			"@layouts*": ["layouts/*"],
-			"@utils*": ["utils/*"],
+			"@components/*": ["components/*"],
+			"@i18n/*": ["i18n/*"],
+			"@data/*": ["data/*"],
+			"@features/*": ["features/*"],
+			"@pages/*": ["pages/*"],
+			"@layouts/*": ["layouts/*"],
+			"@utils/*": ["utils/*"],
 		}
 	},
 	"include": [

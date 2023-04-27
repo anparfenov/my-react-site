@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import { Hero } from 'components/Hero/Hero';
-import { SimpleLayout } from 'layouts/SimpleLayout/SimpleLayout';
-import { aboutData } from 'data/about';
-import { i18n } from 'i18n/i18n';
+import { Hero } from '@components/Hero/Hero';
+import { SimpleLayout } from '@layouts/SimpleLayout/SimpleLayout';
+import { aboutData } from '@data/about';
+import { i18n } from '@i18n/i18n';
 
 export default function Home() {
 	return (
