@@ -9,6 +9,11 @@
     align-items: center;
     justify-content: center;
     color: var(--my-link-icon-color, var(--color-text));
+	padding: 6px;
+}
+
+.MyLinkIcon.MyLinkIsFirst {
+	padding-left: 0;
 }
 
 .MyLinkIcon:hover {
@@ -19,6 +24,8 @@
     color: var(--my-link-simple-color, var(--color-text));
     display: inline-flex;
     gap: 4px;
+	padding: 6px 6px 4px 6px;
+	font-size: var(--text-base);
 }
 
 .MyLinkSimple:active {

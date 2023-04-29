@@ -20,7 +20,7 @@
 .HeroLinkList {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 4px;
     margin-top: 8px;
 }
 
@@ -36,7 +36,7 @@
     max-width: 350px;
 }
 
-@media (min-width: 700px) {
+@media (--tablet-width) {
     .Hero {
         grid-template-areas: 'meta navlist';
     }

@@ -2,7 +2,10 @@ import clsx from 'clsx';
 import Head from 'next/head';
 import React, { FC, ReactNode } from 'react';
 import { MyDevice } from '@features/aboutme/components/MyDevice/MyDevice';
-import { SimpleLinkItem } from '@components/SimpleLinkItem/SimpleLinkItem';
+import {
+	SimpleLinkItem,
+	useSimpleLink,
+} from '@components/SimpleLinkItem/SimpleLinkItem';
 import { TextWithBack } from 'components/TextWithBack/TextWithBack';
 import { aboutData } from 'data/about';
 import { i18n } from 'i18n/i18n';
@@ -16,6 +19,12 @@ type FooterProps = {
 };
 
 export const AboutLayout: FC<FooterProps> = ({ children }) => {
+	const { iconSize } = useSimpleLink({
+		isIcon: Boolean(
+			aboutData.links.some((linkData) => Boolean(linkData.link.icon))
+		),
+	});
+
 	return (
 		<MainLayout>
 			<Head>
@@ -33,7 +42,7 @@ export const AboutLayout: FC<FooterProps> = ({ children }) => {
 						'about-text',
 						style.AboutLayoutText,
 						style.AboutLayoutBox,
-						style.AboutLayoutBoxBorder,
+						style.AboutLayoutBoxBorder
 					)}
 				>
 					{children}
@@ -41,16 +50,28 @@ export const AboutLayout: FC<FooterProps> = ({ children }) => {
 				<div
 					className={clsx(
 						style.AboutLayoutLinks,
-						style.AboutLayoutBox,
+						style.AboutLayoutBox
 					)}
 				>
 					<ul className={clsx(style.AboutLayoutLinkList)}>
-						{aboutData.links.map((link) => (
+						{aboutData.links.map((linkData) => (
 							<li
-								key={link.url}
+								key={linkData.link.url}
 								className={style.AboutLayoutLinkListItem}
 							>
-								<SimpleLinkItem link={link} />
+								<SimpleLinkItem
+									link={linkData.link}
+									iconSize={iconSize}
+								/>
+								{linkData.descriptionLang && (
+									<div
+										className={
+											style.AboutLayoutLinkDescription
+										}
+									>
+										{i18n.t(linkData.descriptionLang)}
+									</div>
+								)}
 							</li>
 						))}
 					</ul>
@@ -58,7 +79,7 @@ export const AboutLayout: FC<FooterProps> = ({ children }) => {
 				<div
 					className={clsx(
 						style.AboutLayoutDevices,
-						style.AboutLayoutBox,
+						style.AboutLayoutBox
 					)}
 				>
 					<ul className={style.AboutLayoutDeviceList}>

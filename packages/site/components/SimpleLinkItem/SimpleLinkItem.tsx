@@ -4,20 +4,69 @@ import {
 	IconBrandTelegram,
 	IconBrandVk,
 } from '@tabler/icons';
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, useEffect, useState } from 'react';
 import { UserLink } from '@data/about';
 import { i18n } from '@i18n/i18n';
 import { LinkTheme, MyLink } from '@components/MyLink/MyLink';
 
-type SimpleLinkItemProps = { link: UserLink };
+type UseSimpleLinkProps = {
+	isIcon: boolean;
+};
 
-export const SimpleLinkItem: FC<SimpleLinkItemProps> = ({ link }) => {
+export function useSimpleLink({ isIcon }: UseSimpleLinkProps) {
+	const [iconSize, setIconSize] = useState(26);
+	useEffect(() => {
+		let mediaQuery: MediaQueryList | null = null;
+		let handleTabletChange: ((e: MediaQueryListEvent) => void) | null =
+			null;
+		if (isIcon) {
+			// NOTE: sync with --tablet-width in custom-media.css
+			mediaQuery = window.matchMedia('(min-width: 768px)');
+
+			handleTabletChange = (e: MediaQueryListEvent) => {
+				if (e.matches) {
+					setIconSize(26);
+				} else {
+					setIconSize(28);
+				}
+			};
+
+			mediaQuery.addEventListener('change', handleTabletChange);
+
+			// FIXME: don't use "as unknown"
+			handleTabletChange(mediaQuery as unknown as MediaQueryListEvent);
+		}
+
+		return () => {
+			if (mediaQuery && handleTabletChange) {
+				mediaQuery.removeEventListener('change', handleTabletChange);
+			}
+		};
+	}, [isIcon]);
+
+	return {
+		iconSize,
+	};
+}
+
+type SimpleLinkItemProps = {
+	link: UserLink;
+	isFirst?: boolean;
+	iconSize: number;
+};
+
+export const SimpleLinkItem: FC<SimpleLinkItemProps> = ({
+	link,
+	isFirst,
+	iconSize,
+}) => {
 	if (link.text || link.textLang) {
 		return (
 			<MyLink
 				href={link.url}
 				theme={LinkTheme.SIMPLE}
 				isActive={link.isActive}
+				isFirst={isFirst}
 			>
 				{link.textLang ? i18n.t(link.textLang) : link.text}
 			</MyLink>
@@ -26,13 +75,15 @@ export const SimpleLinkItem: FC<SimpleLinkItemProps> = ({ link }) => {
 		if (link.icon) {
 			let icon: ReactNode = '';
 			if (link.icon === 'brand-gitlab') {
-				icon = <IconBrandGitlab color="currentColor" size={22} />;
+				icon = <IconBrandGitlab color="currentColor" size={iconSize} />;
 			} else if (link.icon === 'brand-github') {
-				icon = <IconBrandGithub color="currentColor" size={22} />;
+				icon = <IconBrandGithub color="currentColor" size={iconSize} />;
 			} else if (link.icon === 'brand-vk') {
-				icon = <IconBrandVk color="currentColor" size={22} />;
+				icon = <IconBrandVk color="currentColor" size={iconSize} />;
 			} else if (link.icon === 'brand-telegram') {
-				icon = <IconBrandTelegram color="currentColor" size={22} />;
+				icon = (
+					<IconBrandTelegram color="currentColor" size={iconSize} />
+				);
 			}
 			return (
 				<MyLink
@@ -40,6 +91,7 @@ export const SimpleLinkItem: FC<SimpleLinkItemProps> = ({ link }) => {
 					aria-label={link.label}
 					theme={LinkTheme.ICON}
 					isActive={link.isActive}
+					isFirst={isFirst}
 				>
 					{icon}
 				</MyLink>
@@ -51,6 +103,7 @@ export const SimpleLinkItem: FC<SimpleLinkItemProps> = ({ link }) => {
 				href={link.url}
 				theme={LinkTheme.SIMPLE}
 				isActive={link.isActive}
+				isFirst={isFirst}
 			>
 				{link.textLang ? i18n.t(link.textLang) : link.text}
 			</MyLink>

@@ -1,10 +1,10 @@
 .s-common {
-    --text-xs: 10px;
-    --text-sm: 12px;
-    --text-base: 14px;
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-base: 16px;
     --text-lg: 16px;
-    --text-xl: 20rem;
-    --text-xxl: 26rem;
+    --text-xl: 20px;
+    --text-xxl: 26px;
 
     --max-main-width: 1120px;
     --max-header-width: 1120px;
