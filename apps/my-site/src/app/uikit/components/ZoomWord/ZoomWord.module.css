@@ -1,0 +1,61 @@
+.ZoomWord {
+    display: inline-flex;
+    position: relative;
+    font-size: 3rem;
+}
+
+.ZoomWord:hover .ZoomWordList {
+    visibility: visible;
+}
+
+.ZoomWord:hover .ZoomWordListText:nth-of-type(1) {
+    color: hsla(0, 0%, 80%);
+    -webkit-text-stroke: 1px hsla(0, 0%, 80%);
+}
+.ZoomWord:hover .ZoomWordListText:nth-of-type(2) {
+    transform: translate3d(4px, 2px, 0);
+    transition-delay: 0.5s;
+    color: hsla(0, 0%, 75%);
+    -webkit-text-stroke: 1px hsla(0, 0%, 75%);
+}
+.ZoomWord:hover .ZoomWordListText:nth-of-type(3) {
+    transform: translate3d(6px, 3px, 0);
+    transition-delay: 0.4s;
+    color: hsla(0, 0%, 70%);
+    -webkit-text-stroke: 1px hsla(0, 0%, 70%);
+}
+.ZoomWord:hover .ZoomWordListText:nth-of-type(4) {
+    transform: translate3d(8px, 4px, 0);
+    transition-delay: 0.3s;
+    color: hsla(0, 0%, 65%);
+    -webkit-text-stroke: 1px hsla(0, 0%, 65%);
+}
+.ZoomWord:hover .ZoomWordListText:nth-of-type(5) {
+    transform: translate3d(10px, 5px, 0);
+    transition-delay: 0.2s;
+    color: hsla(0, 0%, 60%);
+    -webkit-text-stroke: 1px hsla(0, 0%, 60%);
+}
+.ZoomWord:hover .ZoomWordListText:nth-of-type(6) {
+    transform: translate3d(12px, 6px, 0);
+    transition-delay: 0.1s;
+    color: hsla(0, 0%, 30%);
+    -webkit-text-stroke: 1px hsla(0, 0%, 30%);
+}
+
+.ZoomWordList {
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.ZoomWordListText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+}

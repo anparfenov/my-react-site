@@ -1,0 +1,7 @@
+.Chip {
+    padding: 4px 6px;
+    border-radius: 4px;
+    background-color: var(--chip-bgcolor, var(--color-tertiary));
+    color: var(--chip-color, var(--color-text));
+    display: inline-block;
+}

@@ -1,0 +1,40 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "types": ["jest", "node"],
+    "paths": {
+      "#uikit/*": ["apps/my-site/src/app/uikit/*"],
+      "#model/*": ["apps/my-site/src/app/models/*"],
+      "#viewmodel/*": ["apps/my-site/src/app/viewmodel/*"],
+      "#lib/*": ["apps/my-site/src/app/lib/*"],
+      "#widgets/*": ["apps/my-site/src/app/widgets/*"],
+      "#utils/*": ["apps/my-site/src/app/utils/*"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "../../my-site/.next/types/**/*.ts",
+    "../../dist/my-site/.next/types/**/*.ts",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
+}

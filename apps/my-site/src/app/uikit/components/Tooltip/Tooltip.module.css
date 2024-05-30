@@ -1,0 +1,9 @@
+.TooltipWithIcon {
+	display: flex;
+	align-items: center;
+}
+
+.TooltipIcon {
+	display: flex;
+	align-items: center	;
+}

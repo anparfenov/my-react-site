@@ -1,0 +1,53 @@
+.Hero {
+    display: grid;
+    grid-template-areas: 'meta' 'navlist';
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    height: 100%;
+}
+
+.HeroMeta {
+    grid-area: meta;
+    align-self: end;
+}
+
+.HeroNavListArea {
+    grid-area: navlist;
+    align-self: start;
+}
+
+.HeroLinkList {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.HeroDescription {
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.HeroNavList {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 14px;
+    max-width: 350px;
+}
+
+@media (--tablet-width) {
+    .Hero {
+        grid-template-areas: 'meta navlist';
+    }
+    .HeroMeta {
+        grid-area: meta;
+        justify-self: end;
+        align-self: center;
+    }
+    .HeroNavListArea {
+        grid-area: navlist;
+        justify-self: start;
+        align-self: center;
+    }
+}

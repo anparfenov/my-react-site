@@ -1,0 +1,114 @@
+.MyLinkContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.MyLinkIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--my-link-icon-color, var(--color-text));
+	padding: 6px;
+}
+
+.MyLinkIcon.MyLinkIsFirst {
+	padding-left: 0;
+}
+
+.MyLinkIcon:hover {
+    color: var(--color-extra);
+}
+
+.MyLinkSimple {
+    color: var(--my-link-simple-color, var(--color-text));
+    display: inline-flex;
+    gap: 4px;
+	padding: 6px 6px 4px 6px;
+	font-size: var(--text-base);
+}
+
+.MyLinkSimple:active {
+    color: var(--my-link-simple-color-active, var(--color-text));
+}
+
+.MyLinkSimple:hover {
+    color: var(--color-extra);
+}
+
+.MyLinkBig {
+    --my-link-big-shadow-offset: 10px;
+
+    color: var(--color-back-link-text);
+    font-size: var(--text-xxl);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: var(--monospace);
+    will-change: filter;
+}
+
+.MyLinkBig:visited {
+    color: var(--color-back-link-text);
+}
+
+.MyLinkBig:hover {
+    cursor: pointer;
+    box-shadow: var(--my-link-big-shadow-offset) calc(0px - var(--my-link-big-shadow-offset)) gray,
+                calc(0px - var(--my-link-big-shadow-offset)) var(--my-link-big-shadow-offset) darkgray;
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease;
+    color: var(--color-extra);
+}
+
+.MyLinkBig.MyLinkActive {
+    font-family: var(--monospace);
+    cursor: default;
+}
+
+.MyLinkBig.MyLinkActive:visited {
+    background: var(--color-text);
+    color: var(--color-text-inv);
+}
+
+.MyLinkBig.MyLinkActive:hover {
+    color: var(--color-text);
+}
+
+.MyLinkBigInv {
+    --color-back-link-text: var(--color-text-inv);
+}
+
+.MyLinkPrimary {
+    color: var(--color-back-link-text);
+    position:relative;
+	background: linear-gradient(0deg, var(--color-back-link-background) 50%, transparent 0) 0 0;
+	background-size: 100% 200%;
+    font-family: var(--monospace);
+    transition: color .16s linear,background .26s ease,transform .26s ease;
+    text-transform: uppercase;
+    padding: 2px 4px;
+    white-space: nowrap;
+}
+
+.MyLinkPrimary:visited {
+    color: var(--color-back-link-text);
+}
+
+.MyLinkPrimary.MyLinkActive {
+	background-position: 0 100%;
+	color: var(--color-back-link-hover);
+}
+
+.MyLinkPrimary:hover {
+    background-position: 0 100%;
+    color: var(--color-back-link-hover);
+}
+
+.MyLinkPrimary:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}

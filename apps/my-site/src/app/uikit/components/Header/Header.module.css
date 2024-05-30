@@ -1,0 +1,12 @@
+.Header {
+    max-width: var(--max-header-width);
+    margin: 16px auto;
+    width: 100%;
+}
+
+.HeaderNavList {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 10px;
+}

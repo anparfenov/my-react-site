@@ -1,0 +1,8 @@
+.NavListMain {
+    display: inline-flex;
+    gap: 10px;
+}
+
+.NavListMain + .NavListMain {
+    margin-left: 10px;
+}
