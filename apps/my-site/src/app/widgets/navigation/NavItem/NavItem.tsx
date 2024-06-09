@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
-import { Nav } from '@features/navigation/navigation';
-import { i18n } from '@i18n/i18n';
-import { LinkTheme, MyLink } from '@components/MyLink/MyLink';
+import { Nav } from '#lib/navigation/navigation';
+import { i18n } from '#lib/i18n/i18n';
+import { LinkTheme, MyLink } from '#uikit/components/MyLink/MyLink';
 import style from './NavItem.module.css';
 
 type NavItemProps = { nav: Nav };

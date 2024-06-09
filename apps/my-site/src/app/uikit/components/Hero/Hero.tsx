@@ -1,3 +1,4 @@
+'use client';
 import React, { FC } from 'react';
 import { LinkWithDescription } from '#lib/data/about';
 import { useMyRouter } from '#lib/navigation/navigation';

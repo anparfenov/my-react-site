@@ -1,0 +1,14 @@
+.CVList {
+    list-style-type: disc;
+    padding-left: 16px;
+}
+
+@media (--tablet-width) {
+    .CVList {
+        padding-left: 32px;
+    }
+}
+
+.CVListItem {
+    margin-top: 10px;
+}

@@ -1,0 +1,23 @@
+.MyImage {
+    --my-image-ratio: 1;
+    --my-image-width: 100%;
+    --my-image-max-height: 100%;
+
+    width: var(--my-image-width);
+    background-color: transparent;
+    border-radius: inherit;
+    display: flex;
+}
+
+.MyImagePicture {
+    display: flex;
+    border-radius: inherit;
+}
+
+.MyImageElement {
+    inset: 0;
+    object-fit: contain;
+    object-position: center;
+    border-radius: inherit;
+    max-height: var(--my-image-max-height, 100%);
+}

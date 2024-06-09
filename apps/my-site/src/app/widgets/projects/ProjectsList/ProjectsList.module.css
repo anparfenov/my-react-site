@@ -1,0 +1,16 @@
+.ProjectsList {
+    width: 100%;
+    margin-top: var(--content-margin-top);
+    display: flex;
+    gap: 40px;
+    flex-flow: row wrap;
+}
+
+.ProjectsListItem {
+    margin: 0 auto;
+    max-width: var(--max-project-width);
+}
+
+.ProjectsListItem + .ProjectsListItem {
+    margin-top: 20px;
+}

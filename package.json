@@ -42,11 +42,13 @@
     "typescript": "~5.4.2"
   },
   "dependencies": {
+    "@asleeppiano/http-client": "^1.1.0",
     "@floating-ui/dom": "^1.6.5",
     "@floating-ui/react": "^0.26.16",
     "@tabler/icons": "^3.5.0",
     "@tabler/icons-react": "^3.5.0",
     "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
     "next": "14.2.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",

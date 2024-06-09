@@ -1,0 +1,36 @@
+.CVGrid {
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 
+    "header"
+    "profession"
+    "contacts"
+    "skills"
+    "jobs"
+    "education";
+}
+
+.CVGridHeader {
+    grid-area: header;
+}
+
+.CVGridProfession {
+    grid-area: profession;
+}
+
+.CVGridContacts {
+    grid-area: contacts;
+}
+
+.CVGridSkills {
+    grid-area: skills;
+}
+
+.CVGridJobs {
+    grid-area: jobs;
+}
+
+.CVGridEducation {
+    grid-area: education;
+}

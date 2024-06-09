@@ -1,5 +1,5 @@
 'use client';
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 export type Nav = {
   nameLang: string;
@@ -44,7 +44,7 @@ function updateIsCurrent(routes: Nav[], currentPath: string) {
 }
 
 export function useMyRouter() {
-  const { pathname } = useRouter();
+  const pathname = usePathname();
 
   return {
     navList: updateIsCurrent(routes, pathname),

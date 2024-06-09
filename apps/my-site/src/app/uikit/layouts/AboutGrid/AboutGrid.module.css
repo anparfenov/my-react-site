@@ -1,0 +1,36 @@
+.AboutGrid {
+    width: 100%;
+    display: grid;
+    margin-top: var(--content-margin-top);
+    gap: 10px;
+    grid-template-columns: 100%;
+    grid-template-areas:
+        "text"
+        "links"
+        "devices";
+}
+
+@media (--tablet-width) {
+    .AboutGrid {
+        grid-template-columns: max-content;
+    }
+}
+
+.AboutGridText {
+    grid-area: text;
+    background-color: var(--color-green-bg);
+}
+
+.AboutGridPhoto {
+    grid-area: photo;
+}
+
+.AboutGridLinks {
+    grid-area: links;
+    background-color: var(--color-yellow-bg);
+}
+
+.AboutGridDevices {
+    grid-area: devices;
+    background-color: var(--color-pink-bg);
+}

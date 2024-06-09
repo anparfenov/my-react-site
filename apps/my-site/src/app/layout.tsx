@@ -1,5 +1,7 @@
+import './reset.css';
+import './settings.css';
 import './global.css';
-import { MainLayout } from '#uikit/layouts/MainLayout/MainLayout';
+import { ThemeLayout } from '#uikit/layouts/ThemeLayout/ThemeLayout';
 
 export const metadata = {
   title: 'Welcome to my-site',
@@ -14,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <MainLayout>{children}</MainLayout>
+        <ThemeLayout>{children}</ThemeLayout>
       </body>
     </html>
   );
