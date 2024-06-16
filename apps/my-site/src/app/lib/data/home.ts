@@ -1,8 +1,10 @@
-export const homeI18N = {
-    ru: {
-        seo: {
-            title: 'Андрей Парфенов',
-            description: 'Это мой сайт :)'
-        }
-    }
-}
+import { TranslationObject } from '../../global';
+
+export const homeI18N: TranslationObject = {
+  ru: {
+    seo: {
+      title: 'Андрей Парфенов',
+      description: 'Это мой сайт :)',
+    },
+  },
+};

@@ -1,4 +1,6 @@
-export const aboutI18N = {
+import { TranslationObject } from '../../global';
+
+export const aboutI18N: TranslationObject = {
   ru: {
     seo: {
       title: 'Обо мне | Андрей Парфенов ',
@@ -41,12 +43,12 @@ export type TMyDevice = {
 
 export type LinkWithDescription = { link: UserLink; descriptionLang: string };
 
-export type AboutData = {
+export type AboutData = Readonly<{
   links: LinkWithDescription[];
   devices: TMyDevice[];
-};
+}>;
 
-export const aboutData = {
+export const aboutData: AboutData = {
   links: [
     {
       link: {

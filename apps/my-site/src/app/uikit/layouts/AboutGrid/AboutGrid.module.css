@@ -1,36 +1,33 @@
 .AboutGrid {
-    width: 100%;
-    display: grid;
-    margin-top: var(--content-margin-top);
-    gap: 10px;
-    grid-template-columns: 100%;
-    grid-template-areas:
-        "text"
-        "links"
-        "devices";
+  width: 100%;
+  display: grid;
+  margin-top: var(--content-margin-top);
+  gap: 10px;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    'text'
+    'links'
+    'devices';
 }
 
-@media (--tablet-width) {
-    .AboutGrid {
-        grid-template-columns: max-content;
-    }
+@media (min-width: 768px) {
+  .AboutGrid {
+    grid-template-columns: max-content;
+  }
 }
 
 .AboutGridText {
-    grid-area: text;
-    background-color: var(--color-green-bg);
+  grid-area: text;
 }
 
 .AboutGridPhoto {
-    grid-area: photo;
+  grid-area: photo;
 }
 
 .AboutGridLinks {
-    grid-area: links;
-    background-color: var(--color-yellow-bg);
+  grid-area: links;
 }
 
 .AboutGridDevices {
-    grid-area: devices;
-    background-color: var(--color-pink-bg);
+  grid-area: devices;
 }

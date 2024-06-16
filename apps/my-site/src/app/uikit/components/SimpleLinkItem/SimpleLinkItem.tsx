@@ -20,7 +20,6 @@ export function useSimpleLink({ isIcon }: UseSimpleLinkProps) {
     let mediaQuery: MediaQueryList | null = null;
     let handleTabletChange: ((e: MediaQueryListEvent) => void) | null = null;
     if (isIcon) {
-      // NOTE: sync with --tablet-width in custom-media.css
       mediaQuery = window.matchMedia('(min-width: 768px)');
 
       handleTabletChange = (e: MediaQueryListEvent) => {
@@ -53,12 +52,14 @@ type SimpleLinkItemProps = {
   link: UserLink;
   isFirst?: boolean;
   iconSize: number;
+  label?: string;
 };
 
 export const SimpleLinkItem: FC<SimpleLinkItemProps> = ({
   link,
   isFirst,
   iconSize,
+  label,
 }) => {
   if (link.text || link.textLang) {
     return (
@@ -67,6 +68,7 @@ export const SimpleLinkItem: FC<SimpleLinkItemProps> = ({
         theme={LinkTheme.SIMPLE}
         isActive={link.isActive}
         isFirst={isFirst}
+        label={label}
       >
         {link.textLang ? i18n.t(link.textLang) : link.text}
       </MyLink>
@@ -90,6 +92,7 @@ export const SimpleLinkItem: FC<SimpleLinkItemProps> = ({
           theme={LinkTheme.ICON}
           isActive={link.isActive}
           isFirst={isFirst}
+          label={label}
         >
           {icon}
         </MyLink>
@@ -102,6 +105,7 @@ export const SimpleLinkItem: FC<SimpleLinkItemProps> = ({
         theme={LinkTheme.SIMPLE}
         isActive={link.isActive}
         isFirst={isFirst}
+        label={label}
       >
         {link.textLang ? i18n.t(link.textLang) : link.text}
       </MyLink>

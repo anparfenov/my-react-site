@@ -1,4 +1,6 @@
-export const articlesI18N = {
+import { TranslationObject } from '../../global';
+
+export const articlesI18N: TranslationObject = {
   ru: {
     seo: {
       title: 'Андрей Парфенов | Статьи',

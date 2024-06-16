@@ -18,6 +18,7 @@ type MyLinkProps = {
   isActive?: boolean;
   isFirst?: boolean;
   className?: string;
+  label?: string;
   onClick?: MouseEventHandler<HTMLAnchorElement> | undefined;
 };
 
@@ -25,14 +26,23 @@ export const MyLink: FC<MyLinkProps> = forwardRef<
   HTMLDivElement | null,
   MyLinkProps
 >(function MyLink(
-  { href, theme, children, className, isActive = false, isFirst = false },
+  {
+    href,
+    theme,
+    children,
+    className,
+    isActive = false,
+    isFirst = false,
+    label,
+  },
   ref
 ) {
-  if (ref) {
+  if (ref && href) {
     return (
       <span ref={ref}>
         <Link
           href={href}
+          aria-label={label}
           className={clsx({
             [style.MyLinkActive]: isActive,
             [style.MyLinkBig]: theme === LinkTheme.BIG,
@@ -49,19 +59,24 @@ export const MyLink: FC<MyLinkProps> = forwardRef<
     );
   }
   return (
-    <Link
-      href={href}
-      className={clsx({
-        [style.MyLinkActive]: isActive,
-        [style.MyLinkBig]: theme === LinkTheme.BIG,
-        [style.MyLinkSimple]: theme === LinkTheme.SIMPLE,
-        [style.MyLinkIcon]: theme === LinkTheme.ICON,
-        [style.MyLinkPrimary]: theme === LinkTheme.PRIMARY,
-        [style.MyLinkIsFirst]: isFirst,
-        className,
-      })}
-    >
-      {children}
-    </Link>
+    <>
+      {href && (
+        <Link
+          href={href}
+          aria-label={label}
+          className={clsx({
+            [style.MyLinkActive]: isActive,
+            [style.MyLinkBig]: theme === LinkTheme.BIG,
+            [style.MyLinkSimple]: theme === LinkTheme.SIMPLE,
+            [style.MyLinkIcon]: theme === LinkTheme.ICON,
+            [style.MyLinkPrimary]: theme === LinkTheme.PRIMARY,
+            [style.MyLinkIsFirst]: isFirst,
+            className,
+          })}
+        >
+          {children}
+        </Link>
+      )}
+    </>
   );
 });

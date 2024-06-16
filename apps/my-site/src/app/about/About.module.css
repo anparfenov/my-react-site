@@ -1,0 +1,40 @@
+.AboutLayoutBox {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-text);
+  font-size: var(--text-sm);
+}
+
+.AboutLayoutLinks {
+  display: flex;
+}
+
+.AboutLayoutLinkList {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 4px;
+}
+
+.AboutLayoutLinkListItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.AboutLayoutLinkDescription {
+  font-size: var(--text-sm);
+}
+
+.AboutLayoutDeviceList {
+  gap: 20px;
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .AboutLayoutBox {
+    font-size: var(--text-base);
+  }
+  .AboutLayoutLinkDescription {
+    font-size: var(--text-base);
+  }
+}

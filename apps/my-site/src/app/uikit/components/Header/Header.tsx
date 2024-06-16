@@ -1,5 +1,5 @@
 'use client';
-import React, { FC } from 'react';
+import React from 'react';
 import { useMyRouter } from '#lib/navigation/navigation';
 import { i18n } from '#lib/i18n/i18n';
 import { LinkTheme, MyLink } from '#uikit/components/MyLink/MyLink';
